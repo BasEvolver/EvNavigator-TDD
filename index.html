@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigator TDD</title>
-    <!-- Link to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -17,35 +15,114 @@
         <div class="main-content-wrapper">
             <div id="header-container"></div>
             <main id="main-content" class="p-8">
-                <!-- Dashboard Content -->
-                <div class="dashboard-grid">
-                    <div class="dashboard-card col-span-2">
-                        <h2 class="card-title">Welcome to Navigator TDD</h2>
-                        <p class="card-text">Here is a summary of your active technical diligence engagements. You have <strong class="text-yellow-600">2</strong> items requiring your immediate attention.</p>
+                <div class="dashboard-container">
+                    <div class="dashboard-header">
+                        <h2 class="greeting-title">Good afternoon, Alex.</h2>
+                        <p class="greeting-subtitle">Here is an overview of your active engagements.</p>
                     </div>
-                    <div class="dashboard-card col-span-2">
-                        <h3 class="card-title">Active Engagements</h3>
-                        <div class="engagement-list">
-                            <div class="engagement-item">
+
+                    <!-- NEW 2x3 + 1 COMPANY CARD GRID -->
+                    <div class="company-grid">
+                        <!-- Card 1: PBTDD (At Risk) -->
+                        <div class="company-card">
+                            <div class="company-header">
                                 <div>
-                                    <p class="font-semibold">Project Phoenix (TechFlow Solutions)</p>
-                                    <p class="text-sm text-gray-500">Phase: Deep Dive</p>
+                                    <h3 class="company-name">TechFlow Solutions</h3>
+                                    <p class="company-stage">Due Diligence</p>
                                 </div>
-                                <div class="text-right">
-                                    <p class="font-semibold text-yellow-600">At Risk</p>
-                                    <p class="text-sm text-gray-500">Due in 8 days</p>
-                                </div>
+                                <span class="status-badge status-at-risk">At Risk</span>
                             </div>
-                            <div class="engagement-item">
+                            <ul class="company-kpis">
+                                <li><span>Phase</span><span>Data Analysis</span></li>
+                                <li><span>Due Date</span><span>Oct 28, 2025</span></li>
+                                <li><span>Offering</span><span>PBTDD</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 2: NAILs (On Track) -->
+                        <div class="company-card">
+                            <div class="company-header">
                                 <div>
-                                    <p class="font-semibold">Project Titan (CloudVantage)</p>
-                                    <p class="text-sm text-gray-500">Phase: Synthesis</p>
+                                    <h3 class="company-name">CloudVantage</h3>
+                                    <p class="company-stage">Post-Acquisition</p>
                                 </div>
-                                <div class="text-right">
-                                    <p class="font-semibold text-green-600">On Track</p>
-                                    <p class="text-sm text-gray-500">Due in 15 days</p>
-                                </div>
+                                <span class="status-badge status-on-track">On Track</span>
                             </div>
+                             <ul class="company-kpis">
+                                <li><span>Phase</span><span>Workshops</span></li>
+                                <li><span>Due Date</span><span>Nov 15, 2025</span></li>
+                                <li><span>Offering</span><span>NAILs</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 3: VCHC (On Track) -->
+                        <div class="company-card">
+                            <div class="company-header">
+                                <div>
+                                    <h3 class="company-name">Innovate Inc.</h3>
+                                    <p class="company-stage">Value Creation</p>
+                                </div>
+                                <span class="status-badge status-on-track">On Track</span>
+                            </div>
+                             <ul class="company-kpis">
+                                <li><span>Phase</span><span>Report Gen</span></li>
+                                <li><span>Due Date</span><span>Nov 05, 2025</span></li>
+                                <li><span>Offering</span><span>VCHC</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 4: PBTDD (Completed) -->
+                        <div class="company-card">
+                            <div class="company-header">
+                                <div>
+                                    <h3 class="company-name">DataFlow Systems</h3>
+                                    <p class="company-stage">Completed</p>
+                                </div>
+                                <span class="status-badge status-completed">Completed</span>
+                            </div>
+                             <ul class="company-kpis">
+                                <li><span>Phase</span><span>Final Report</span></li>
+                                <li><span>Completed</span><span>Oct 1, 2025</span></li>
+                                <li><span>Offering</span><span>PBTDD</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 5: EVR (Upcoming) -->
+                        <div class="company-card">
+                            <div class="company-header">
+                                <div>
+                                    <h3 class="company-name">ScaleOps</h3>
+                                    <p class="company-stage">Exit Prep</p>
+                                </div>
+                                <span class="status-badge status-upcoming">Upcoming</span>
+                            </div>
+                             <ul class="company-kpis">
+                                <li><span>Phase</span><span>Kick-Off</span></li>
+                                <li><span>Start Date</span><span>Dec 01, 2025</span></li>
+                                <li><span>Offering</span><span>EVR</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 6: PBTDD (On Hold) -->
+                        <div class="company-card">
+                            <div class="company-header">
+                                <div>
+                                    <h3 class="company-name">QuantumLeap</h3>
+                                    <p class="company-stage">On Hold</p>
+                                </div>
+                                <span class="status-badge status-on-hold">On Hold</span>
+                            </div>
+                             <ul class="company-kpis">
+                                <li><span>Phase</span><span>Scoping</span></li>
+                                <li><span>Status</span><span>Awaiting LOI</span></li>
+                                <li><span>Offering</span><span>PBTDD</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 7: Add New -->
+                        <div class="add-company-card">
+                            <svg class="add-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            <span class="add-text">Add New Engagement</span>
                         </div>
                     </div>
                 </div>
