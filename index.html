@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigator TDD</title>
-    <!-- Correct path to the stylesheet -->
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="app-container">
-        <!-- 1. This is the empty container where the sidebar will be injected by JavaScript -->
-        <div id="sidebar-container">
-            <!-- You can put a simple loading state here if you want -->
-        </div>
-
+        <div id="sidebar-container"></div>
         <div class="main-content-wrapper">
-            <!-- 2. This is the empty container for the header -->
             <div id="header-container"></div>
-
-            <!-- Main Content Area -->
             <main id="main-content" class="p-8">
-                <!-- Your dashboard content goes here -->
+                <!-- Dashboard Content -->
                 <div class="dashboard-grid">
                     <div class="dashboard-card col-span-2">
                         <h2 class="card-title">Welcome to Navigator TDD</h2>
@@ -55,8 +52,6 @@
             </main>
         </div>
     </div>
-
-    <!-- 3. The script is now correctly placed at the end of the body -->
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 /* css/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* --- Theme Variables --- */
 :root {
@@ -8,25 +9,27 @@
     --border-color: #E5E7EB;
     --text-primary: #111827;
     --text-secondary: #6B7280;
+    --text-muted: #9CA3AF;
     --accent-blue: #3B82F6;
-    --accent-blue-light: #DBEAFE;
+    --accent-blue-light: #EFF6FF; /* Lighter for active background */
 }
 
 [data-theme="dark"] {
     --bg-primary: #1F2937;
     --bg-secondary: #111827;
     --bg-hover: #374151;
-    --border-color: #4B5563;
+    --border-color: #374151;
     --text-primary: #F9FAFB;
     --text-secondary: #9CA3AF;
+    --text-muted: #6B7280;
     --accent-blue: #60A5FA;
-    --accent-blue-light: #1E40AF;
+    --accent-blue-light: #1E3A8A; /* Darker for active background */
 }
 
 /* --- Base & Layout --- */
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-secondary);
     color: var(--text-primary);
     transition: background-color 0.3s, color 0.3s;
@@ -44,14 +47,14 @@ main { flex-grow: 1; overflow-y: auto; }
 .nav-link { color: var(--text-secondary); font-weight: 500; transition: background-color 0.2s, color 0.2s; }
 .nav-link:hover { background-color: var(--bg-hover); color: var(--text-primary); }
 .nav-link.active { background-color: var(--accent-blue-light); color: var(--accent-blue); font-weight: 600; }
-.nav-link .nav-icon { margin-right: 0.75rem; color: var(--text-secondary); transition: color 0.2s; }
+.nav-link .nav-icon { margin-right: 0.75rem; color: var(--text-muted); transition: color 0.2s; }
 .nav-link:hover .nav-icon, .nav-link.active .nav-icon { color: var(--accent-blue); }
 
-/* --- Sidebar Footer & Theme Toggle --- */
+/* --- Sidebar Footer & Theme Toggle (Original App Style) --- */
 .sidebar-footer {
     padding: 1rem;
     border-top: 1px solid var(--border-color);
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents the footer from shrinking */
     display: flex;
     align-items: center;
     justify-content: space-between;
