@@ -1,0 +1,101 @@
+/* css/styles.css */
+
+/* --- Theme Variables --- */
+:root {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+    --bg-hover: #F1F5F9;
+    --border-color: #E5E7EB;
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+    --accent-blue: #3B82F6;
+    --accent-blue-light: #DBEAFE;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1F2937;
+    --bg-secondary: #111827;
+    --bg-hover: #374151;
+    --border-color: #4B5563;
+    --text-primary: #F9FAFB;
+    --text-secondary: #9CA3AF;
+    --accent-blue: #60A5FA;
+    --accent-blue-light: #1E40AF;
+}
+
+/* --- Base & Layout --- */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.app-container { display: flex; height: 100%; }
+.main-content-wrapper { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+main { flex-grow: 1; overflow-y: auto; }
+
+/* --- Sidebar --- */
+#sidebar { background-color: var(--bg-primary); border-right-color: var(--border-color); transition: background-color 0.3s, border-color 0.3s; }
+#sidebar .border-b, #sidebar .border-t { border-color: var(--border-color); }
+.nav-link { color: var(--text-secondary); font-weight: 500; transition: background-color 0.2s, color 0.2s; }
+.nav-link:hover { background-color: var(--bg-hover); color: var(--text-primary); }
+.nav-link.active { background-color: var(--accent-blue-light); color: var(--accent-blue); font-weight: 600; }
+.nav-link .nav-icon { margin-right: 0.75rem; color: var(--text-secondary); transition: color 0.2s; }
+.nav-link:hover .nav-icon, .nav-link.active .nav-icon { color: var(--accent-blue); }
+
+/* --- Sidebar Footer & Theme Toggle --- */
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.settings-icon, .theme-toggle-button {
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+.settings-icon:hover, .theme-toggle-button:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-hover);
+}
+.theme-toggle-button { padding: 8px; }
+[data-theme="light"] .moon-icon { display: none; }
+[data-theme="dark"] .sun-icon { display: none; }
+
+/* --- Header --- */
+header { background-color: var(--bg-primary); border-bottom-color: var(--border-color); }
+.primary-button { background-color: var(--accent-blue); color: white; font-weight: 600; padding: 0.5rem 1rem; border-radius: 0.5rem; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; transition: opacity 0.2s; }
+.primary-button:hover { opacity: 0.9; }
+
+/* --- Dashboard Content --- */
+.dashboard-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.dashboard-card { background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.col-span-2 { grid-column: span 2 / span 2; }
+.card-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
+.card-text { color: var(--text-secondary); }
+.engagement-list { display: flex; flex-direction: column; gap: 1rem; }
+.engagement-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background-color: var(--bg-secondary); border-radius: 0.5rem; }
+.task-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.task-list li { display: flex; align-items: center; gap: 0.75rem; font-weight: 500; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.text-yellow-600 { color: #D97706; }
+.text-green-600 { color: #059669; }
+.bg-red-500 { background-color: #EF4444; }
+.bg-yellow-500 { background-color: #F59E0B; }
+.bg-gray-300 { background-color: #D1D5DB; }
