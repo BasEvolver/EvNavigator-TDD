@@ -11,7 +11,7 @@
     --text-secondary: #6B7280;
     --text-muted: #9CA3AF;
     --accent-blue: #3B82F6;
-    --accent-blue-light: #EFF6FF; /* Lighter for active background */
+    --accent-blue-light: #EFF6FF;
 }
 
 [data-theme="dark"] {
@@ -23,7 +23,7 @@
     --text-secondary: #9CA3AF;
     --text-muted: #6B7280;
     --accent-blue: #60A5FA;
-    --accent-blue-light: #1E3A8A; /* Darker for active background */
+    --accent-blue-light: #1E3A8A;
 }
 
 /* --- Base & Layout --- */
@@ -42,7 +42,14 @@ body {
 main { flex-grow: 1; overflow-y: auto; }
 
 /* --- Sidebar --- */
-#sidebar { background-color: var(--bg-primary); border-right-color: var(--border-color); transition: background-color 0.3s, border-color 0.3s; }
+#sidebar { 
+    background-color: var(--bg-primary); 
+    border-right-color: var(--border-color); 
+    transition: background-color 0.3s, border-color 0.3s; 
+    /* CRITICAL: This ensures the footer is pushed to the bottom */
+    display: flex;
+    flex-direction: column;
+}
 #sidebar .border-b, #sidebar .border-t { border-color: var(--border-color); }
 .nav-link { color: var(--text-secondary); font-weight: 500; transition: background-color 0.2s, color 0.2s; }
 .nav-link:hover { background-color: var(--bg-hover); color: var(--text-primary); }
@@ -50,11 +57,11 @@ main { flex-grow: 1; overflow-y: auto; }
 .nav-link .nav-icon { margin-right: 0.75rem; color: var(--text-muted); transition: color 0.2s; }
 .nav-link:hover .nav-icon, .nav-link.active .nav-icon { color: var(--accent-blue); }
 
-/* --- Sidebar Footer & Theme Toggle (Original App Style) --- */
+/* --- Sidebar Footer & Theme Toggle --- */
 .sidebar-footer {
     padding: 1rem;
     border-top: 1px solid var(--border-color);
-    flex-shrink: 0; /* Prevents the footer from shrinking */
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
